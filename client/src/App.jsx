@@ -1,9 +1,12 @@
 import React from "react";
-import Login from "./Component/LoginForm.jsx";
+import AuthPage from "./Component/AuthPage.jsx";
 
 function App() {
   return (
-   <Login />  
+    <>
+    <AuthPage/>
+
+    </>
   );
 }
 

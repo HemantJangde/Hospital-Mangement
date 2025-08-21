@@ -1,0 +1,15 @@
+.about-us-page .hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  }
+  
+  .about-us-page h2 {
+    font-weight: bold;
+  }
+  
+  .carousel-caption {
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+  }
+  
