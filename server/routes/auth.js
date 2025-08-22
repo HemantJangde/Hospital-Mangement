@@ -1,6 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
-const User = require("../models/User.js"); // 👈 import User model
+const User = require("../models/User.js");
 
 const router = express.Router();
 

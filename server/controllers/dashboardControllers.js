@@ -1,4 +1,4 @@
-const Patient = require("../models/registerModel"); 
+const Patient = require("../models/registerModel.js"); 
 const Appointment = require("../models/dashboardModel.js");
 
 const totalShow = async (req, res) => {

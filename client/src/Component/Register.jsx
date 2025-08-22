@@ -6,7 +6,6 @@ const Register = () => {
   const [gender, setGender] = useState("");
   const [contact, setContact] = useState("");
   const [idProof, setIdProof] = useState("");
-
   const [hover, setHover] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -47,51 +46,37 @@ const Register = () => {
   return (
     <div className="container d-flex justify-content-center align-items-center min-vh-100 p-3 bg-light">
       <div
-        className="card shadow-lg border-0 rounded-4 w-100"
-        style={{ maxWidth: "500px" }}
+        className="card shadow-lg border-0 rounded-4"
+        style={{ maxWidth: "420px", width: "100%" }}
       >
-        <div className="card-body p-5">
+        <div className="card-body p-4 p-md-5">
           <h4 className="card-title mb-4 text-center fw-bold text-primary">
             Register User
           </h4>
           <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="fullName" className="form-label fw-semibold">
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="fullName"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="form-control form-control-lg rounded-3"
-                placeholder="Enter full name"
-                required
-              />
-            </div>
+            {[
+              { label: "Full Name", type: "text", value: name, setter: setName, placeholder: "Enter full name" },
+              { label: "Age", type: "number", value: age, setter: setAge, placeholder: "Enter age", min: 0 },
+              { label: "Contact Info", type: "tel", value: contact, setter: setContact, placeholder: "Enter contact number" },
+              { label: "ID Proof", type: "text", value: idProof, setter: setIdProof, placeholder: "Enter ID proof" },
+            ].map((field, idx) => (
+              <div className="mb-3" key={idx}>
+                <label className="form-label fw-semibold">{field.label}</label>
+                <input
+                  type={field.type}
+                  className="form-control form-control-lg rounded-3"
+                  placeholder={field.placeholder}
+                  value={field.value}
+                  onChange={(e) => field.setter(e.target.value)}
+                  min={field.min}
+                  required
+                />
+              </div>
+            ))}
 
             <div className="mb-3">
-              <label htmlFor="age" className="form-label fw-semibold">
-                Age
-              </label>
-              <input
-                type="number"
-                id="age"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-                className="form-control form-control-lg rounded-3"
-                placeholder="Enter age"
-                required
-                min={0}
-              />
-            </div>
-
-            <div className="mb-3">
-              <label htmlFor="gender" className="form-label fw-semibold">
-                Gender
-              </label>
+              <label className="form-label fw-semibold">Gender</label>
               <select
-                id="gender"
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
                 className="form-select form-select-lg rounded-3"
@@ -104,37 +89,7 @@ const Register = () => {
               </select>
             </div>
 
-            <div className="mb-3">
-              <label htmlFor="contactInfo" className="form-label fw-semibold">
-                Contact Info
-              </label>
-              <input
-                type="tel"
-                id="contactInfo"
-                value={contact}
-                onChange={(e) => setContact(e.target.value)}
-                className="form-control form-control-lg rounded-3"
-                placeholder="Enter contact number"
-                required
-              />
-            </div>
-
-            <div className="mb-4">
-              <label htmlFor="idProof" className="form-label fw-semibold">
-                ID Proof
-              </label>
-              <input
-                type="text"
-                id="idProof"
-                value={idProof}
-                onChange={(e) => setIdProof(e.target.value)}
-                className="form-control form-control-lg rounded-3"
-                placeholder="Enter ID proof"
-                required
-              />
-            </div>
-
-            <div className="d-grid">
+            <div className="d-grid mt-4">
               <button
                 type="submit"
                 className="btn btn-lg fw-bold rounded-3"
@@ -144,6 +99,7 @@ const Register = () => {
                     : "linear-gradient(90deg, #0d6efd, #6610f2)",
                   border: "none",
                   color: "#fff",
+                  boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
                   transition: "0.3s",
                 }}
                 onMouseEnter={() => setHover(true)}

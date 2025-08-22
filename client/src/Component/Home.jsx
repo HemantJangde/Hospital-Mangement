@@ -11,6 +11,7 @@ const HomePage = () => {
         <p className="lead">Advanced Healthcare, Compassionate Care, Trusted Professionals</p>
         <div className="mt-4">
           <a href="/appointments" className="btn btn-light btn-lg me-3 fw-bold">Book Appointment</a>
+          
           <a href="/contact" className="btn btn-outline-light btn-lg fw-bold">Contact Us</a>
         </div>
       </div>

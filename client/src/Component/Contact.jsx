@@ -72,10 +72,9 @@ const ContactUs = () => {
         <p className="mb-4">Our hospital is located in the heart of Wellness City, easily accessible by all transport.</p>
         <div className="ratio ratio-16x9 mx-auto" style={{maxWidth: "800px"}}>
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835433024513!2d144.9630577153182!3d-37.81362797975152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f3f0c9ef%3A0x5045675218ce6e0!2sHospital!5e0!3m2!1sen!2sus!4v1692633600000!5m2!1sen!2sus" 
+            src="https://www.google.com/maps/place/Avish+Educom/@21.1981063,81.2808446,17z/data=!4m16!1m9!4m8!1m3!2m2!1d81.2881127!2d21.1986488!1m3!2m2!1d81.2881127!2d21.1986488!3m5!1s0x3a293c5273b54a65:0x3dfe30a1cf9276a9!8m2!3d21.1981065!4d81.2853507!16s%2Fg%2F11c52spqgz?entry=ttu&g_ep=EgoyMDI1MDgxOS4wIKXMDSoASAFQAw%3D%3D" 
             style={{border:0}} 
-            allowFullScreen="" 
-            loading="lazy" 
+          
             title="Hospital Location"
           ></iframe>
         </div>

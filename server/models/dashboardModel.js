@@ -7,7 +7,7 @@ const appointmentDashboardSchema = new mongoose.Schema({
   status: { type: String, required: true },
 });
 
-// Prevent OverwriteModelError
-const Dashboard = mongoose.models.Dashboard || mongoose.model('Dashboard', appointmentDashboardSchema);
+
+const Dashboard =mongoose.model('Dashboard', appointmentDashboardSchema);
 
 module.exports = Dashboard;

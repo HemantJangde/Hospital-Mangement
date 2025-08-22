@@ -33,7 +33,6 @@ const registerSchema = new mongoose.Schema({
 });
 
 // Fix for OverwriteModelError: check if model already exists
-const registerModel =
-  mongoose.models.User || mongoose.model("User", registerSchema);
+const registerModel = mongoose.model("register", registerSchema);
 
 module.exports = registerModel;
