@@ -104,7 +104,7 @@ const AppointScheduling = () => {
   };
 
   return (
-    <div className="container my-4">
+    <div className="container my-4 p-5">
       <div className="card shadow-sm mx-auto" style={{ maxWidth: "500px" }}>
         <div className="card-body">
           <h3 className="card-title text-center mb-4">
@@ -114,7 +114,7 @@ const AppointScheduling = () => {
           {/* Date Picker */}
           <div className="mb-3">
             <label htmlFor="datePicker" className="form-label">
-            Choose  Date
+              Date Choose karo
             </label>
             <input
               type="date"
@@ -128,7 +128,7 @@ const AppointScheduling = () => {
           {/* User Select */}
           <div className="mb-3">
             <label htmlFor="userSelect" className="form-label">
-               Select User
+              User Select karo
             </label>
             <select
               id="userSelect"
@@ -136,7 +136,7 @@ const AppointScheduling = () => {
               value={selectedUser}
               onChange={(e) => setSelectedUser(e.target.value)}
             >
-              <option value="">--choose  User--</option>
+              <option value="">-- User choose karo --</option>
               {loadingUsers ? (
                 <option disabled>Loading users...</option>
               ) : (

@@ -1,0 +1,62 @@
+/* Fade-in animation for table container */
+.animate-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s forwards;
+  }
+  
+  /* Fade-up animation for each row */
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUp 0.5s forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Input and select smooth transition */
+  .input-animate {
+    transition: all 0.3s ease;
+  }
+  
+  .input-animate:focus {
+    box-shadow: 0 0 6px rgba(13, 110, 253, 0.5);
+    border-color: #0d6efd;
+  }
+  
+  /* Button hover animation */
+  .btn-animate:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(13, 110, 253, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  /* Badge hover */
+  .badge-animate {
+    transition: all 0.3s ease;
+  }
+  
+  .badge-animate:hover {
+    transform: scale(1.1);
+    opacity: 0.85;
+  }
+  
+  /* Avatar circle */
+  .avatar {
+    width: 35px;
+    height: 35px;
+    font-weight: 600;
+  }
+  
