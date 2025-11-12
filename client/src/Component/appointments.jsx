@@ -114,7 +114,7 @@ const AppointScheduling = () => {
           {/* Date Picker */}
           <div className="mb-3">
             <label htmlFor="datePicker" className="form-label">
-              Date Choose karo
+            Choose   Date 
             </label>
             <input
               type="date"
@@ -128,7 +128,7 @@ const AppointScheduling = () => {
           {/* User Select */}
           <div className="mb-3">
             <label htmlFor="userSelect" className="form-label">
-              User Select karo
+             Select  User 
             </label>
             <select
               id="userSelect"
@@ -136,7 +136,7 @@ const AppointScheduling = () => {
               value={selectedUser}
               onChange={(e) => setSelectedUser(e.target.value)}
             >
-              <option value="">-- User choose karo --</option>
+              <option value="">-- Select  User  --</option>
               {loadingUsers ? (
                 <option disabled>Loading users...</option>
               ) : (
