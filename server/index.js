@@ -1,14 +1,13 @@
-
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const authRoutes = require("./routes/auth.js");
-  // Routes
-  const registerRoute = require("./routes/registerRoute.js");
-  const appoinmentRoute=require("./routes/appoinmentRoute.js");
-  const dashboardRoute=require("./routes/dashboardRoute.js")
 
+// Routes
+const authRoutes = require("./routes/auth.js");
+const registerRoute = require("./routes/registerRoute.js");
+const appoinmentRoute = require("./routes/appoinmentRoute.js");
+const dashboardRoute = require("./routes/dashboardRoute.js");
 
 dotenv.config();
 const app = express();
@@ -17,23 +16,22 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
 // Use routes with prefix
 app.use("/api/auth", authRoutes);
 app.use("/registerUser", registerRoute);
-app.use("/appoinmentUser",appoinmentRoute);
-app.use("/dashboard",dashboardRoute)
+app.use("/appoinmentUser", appoinmentRoute);
+app.use("/dashboard", dashboardRoute);
 
-
+// Root route
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Server is live and running!");
 });
 
-// MongoDB
+// MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch(err => console.log("❌ MongoDB Error:", err));
 
-
-const PORT = process.env.PORT ;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Use Render’s dynamic port or default to 8000 for local
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
