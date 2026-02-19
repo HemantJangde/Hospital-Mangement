@@ -1,9 +1,11 @@
 import { useState } from "react";
 import api from "./axios.js"; // 👈 import axios instance
 import "../AuthPage.css"
-
+import LoadingPage from "./LoadingPage.jsx";
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
+
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -17,6 +19,8 @@ export default function AuthPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+        setLoading(true); // 🔥 show loading page
+
       if (isLogin) {
         const res = await api.post("/login", { email: formData.email, password: formData.password });
         if (res.data.success) {
@@ -36,6 +40,10 @@ export default function AuthPage() {
       setMessage("❌ " + (err.response?.data?.error || "Something went wrong"));
     }
   };
+    // 🚀 Show loading screen
+  if (loading) {
+    return <LoadingPage text={isLogin ? "Logging you in..." : "Creating your account..."} />;
+  }
 
   return (
     <div className="auth-container">

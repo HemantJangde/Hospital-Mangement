@@ -12,13 +12,15 @@ const ContactUs = () => {
     <div>
 
       {/* Hero Section */}
-      <div className="bg-success text-white text-center py-5" data-aos="fade-down">
-        <h1 className="display-4 fw-bold">Get in Touch</h1>
+      <div className="bg-success text-white text-center responsive-min-vh   px-5   "
+          style={{paddingTop:'200px',
+      paddingBottom:'180px'}} >
+        <h1 className="display-4 fw-bold ">Get in Touch</h1>
         <p className="lead">We are here to help you 24/7 with all your medical queries.</p>
       </div>
 
       {/* Contact Info Section */}
-      <div className="bg-light py-5">
+      <div className="bg-light py-5 ">
         <div className="container">
           <h2 className="text-center fw-bold mb-4" data-aos="fade-up">Our Contact Information</h2>
           <div className="row g-4 text-center">

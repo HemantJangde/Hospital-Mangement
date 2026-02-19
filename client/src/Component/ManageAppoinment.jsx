@@ -3,6 +3,8 @@ import { format, parseISO } from "date-fns";
 import axios from "axios";
 import '../App.css'
 
+import LoadingPage from "./LoadingPage";
+
 const ManageAppointment = () => {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +19,7 @@ const ManageAppointment = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get("http://localhost:8000/appoinmentUser/appointments/bookedShow");
+        const res = await axios.get("https://hospital-mangement-bzp1.onrender.com/appoinmentUser/appointments/bookedShow");
         setAppointments(res.data.userRes);
         setLoading(false);
       } catch (err) {
@@ -81,7 +83,7 @@ const ManageAppointment = () => {
 
   const formatDate = (dateStr) => format(parseISO(dateStr), "PPP");
 
-  if (loading) return <div className="text-center py-5">Loading...</div>;
+  if (loading) return <div className="text-center " style={{paddingTop:"100px"}}>Loading...</div>;
   if (error) return <div className="text-center py-5 text-danger">{error}</div>;
 
   return (
