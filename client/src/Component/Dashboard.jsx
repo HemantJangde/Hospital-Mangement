@@ -16,7 +16,7 @@ const Dashboard = () => {
   const fetchDashboardData = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:8000/appoinmentUser/appointments/bookedShow"
+        "https://hospital-mangement-bzp1.onrender.com/appoinmentUser/appointments/bookedShow"
       );
 
       const todayStr = new Date().toISOString().split("T")[0];
