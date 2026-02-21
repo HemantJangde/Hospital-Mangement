@@ -19,7 +19,7 @@ const Register = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/registerUser/insertUser",
+        "https://hospital-mangement-bzp1.onrender.com/registerUser/insertUser",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
